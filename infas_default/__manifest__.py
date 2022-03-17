@@ -43,13 +43,13 @@
 
         # Contabilidad
         'account',
-        'account_ux',
+        # 'account_ux',
         # 'account_check',
         # 'account_financial_report',
         # 'account_journal_lock_date',
         # 'account_menu',
         # 'partner_statement',
-        'account_journal_security',
+        # 'account_journal_security',
         # 'account_netting',
         # 'om_account_accountant',
         # 'accounting_pdf_reports',
@@ -70,21 +70,21 @@
         # 'account_bank_statement_import_transfer_move',
         # 'account_bank_statement_import_txt_xlsx',
         # 'account_cash_invoice',
-        'sale_ux',
+        # 'sale_ux',
         # 'account_transfer_unreconcile',
-        'base_currency_inverse_rate',
+        # 'base_currency_inverse_rate',
 
         # Cybrosys
-        'base_accounting_kit',
-        'crm_kit',
+        # 'base_accounting_kit',
+        # 'crm_kit',
 
         # Localización
         # All
         'l10n_ar',
-        'l10n_ar_bank',
-        'l10n_ar_account_withholding',
-        'l10n_ar_sale',
-        'l10n_ar_stock',
+        # 'l10n_ar_bank',
+        # 'l10n_ar_account_withholding',
+        # 'l10n_ar_sale',
+        # 'l10n_ar_stock',
         # 'padron_afip',
         # 'report_qweb_pdf_watermark',
 
@@ -100,9 +100,9 @@
         # EE
         'l10n_ar_edi',
         # 'l10n_ar_reports',
-        'l10n_ar_account_tax_settlement',
-        'l10n_ar_edi_ux',
-        'l10n_ar_currency_update',
+        # 'l10n_ar_account_tax_settlement',
+        # 'l10n_ar_edi_ux',
+        # 'l10n_ar_currency_update',
 
         # Utils
         # 'web_search_with_and',
