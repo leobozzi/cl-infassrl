@@ -313,7 +313,7 @@
         # 'https://github.com/ingadhoc/multi-store ingadhoc-multi-store',
 
         # Fix porque falla la instalacion de l10n_ar_ux
-        #'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
+        'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
 
         #'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
         'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
