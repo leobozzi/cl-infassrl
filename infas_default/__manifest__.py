@@ -26,23 +26,23 @@
     'author': 'Leonardo Bozzi',
     'depends': [
         # Applicaciones del Cliente
-        'sale',
-        'sale_management',
+        # 'sale',
+        # 'sale_management',
         # 'sale_order_type',
         # 'sale_order_type_ux',
-        'purchase',
-        'stock',
-        'note',
-        'board',
-        'calendar',
-        'crm',
+        # 'purchase',
+        # 'stock',
+        # 'note',
+        # 'board',
+        # 'calendar',
+        # 'crm',
         # 'sale_crm_ux',
         # 'crm_stage_teams',
-        'base_ux',
-        'stock_ux',
+        # 'base_ux',
+        # 'stock_ux',
 
         # Contabilidad
-        'account',
+        # 'account',
         # 'account_ux',
         # 'account_check',
         # 'account_financial_report',
@@ -80,7 +80,7 @@
 
         # Localización
         # All
-        'l10n_ar',
+        # 'l10n_ar',
         # 'l10n_ar_bank',
         # 'l10n_ar_account_withholding',
         # 'l10n_ar_sale',
@@ -98,7 +98,7 @@
         # 'l10n_ar_aeroo_base',
 
         # EE
-        'l10n_ar_edi',
+        # 'l10n_ar_edi',
         # 'l10n_ar_reports',
         # 'l10n_ar_account_tax_settlement',
         # 'l10n_ar_edi_ux',
@@ -169,7 +169,7 @@
 
         # Comma-separated list of server-wide modules, there are modules loaded
         # automatically even if you do not create any database.
-            'server_wide_modules = base,web,dbfilter_from_header',
+            'server_wide_modules = base,web',
 
         # Filter listed database REGEXP
             'dbfilter =',
