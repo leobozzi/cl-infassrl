@@ -169,7 +169,7 @@
 
         # Comma-separated list of server-wide modules, there are modules loaded
         # automatically even if you do not create any database.
-            'server_wide_modules = base',
+            'server_wide_modules = base,web',
 
         # Filter listed database REGEXP
             'dbfilter =',
