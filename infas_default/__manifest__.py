@@ -26,7 +26,6 @@
     'author': 'Leonardo Bozzi',
     'depends': [
         # Applicaciones del Cliente
-        'sale',
         # 'sale_management',
         # 'sale_order_type',
         # 'sale_order_type_ux',
