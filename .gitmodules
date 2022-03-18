@@ -1,0 +1,4 @@
+[submodule "ingadhoc/account-financial-tools"]
+	path = ingadhoc/account-financial-tools
+	url = git@github.com:ingadhoc/account-financial-tools.git
+	branch = 15.0
