@@ -79,11 +79,11 @@
 
         # Localización
         # All
-        # 'l10n_ar',
-        # 'l10n_ar_bank',
-        # 'l10n_ar_account_withholding',
-        # 'l10n_ar_sale',
-        # 'l10n_ar_stock',
+        'l10n_ar',
+        'l10n_ar_bank',
+        'l10n_ar_account_withholding',
+        'l10n_ar_sale',
+        'l10n_ar_stock',
         # 'padron_afip',
         # 'report_qweb_pdf_watermark',
 
@@ -97,11 +97,11 @@
         # 'l10n_ar_aeroo_base',
 
         # EE
-        # 'l10n_ar_edi',
-        # 'l10n_ar_reports',
-        # 'l10n_ar_account_tax_settlement',
-        # 'l10n_ar_edi_ux',
-        # 'l10n_ar_currency_update',
+        'l10n_ar_edi',
+        'l10n_ar_reports',
+        'l10n_ar_account_tax_settlement',
+        'l10n_ar_edi_ux',
+        'l10n_ar_currency_update',
 
         # Utils
         # 'web_search_with_and',
@@ -305,18 +305,18 @@
         # 'https://github.com/ingadhoc/account-payment ingadhoc-account-payment',
         # 'https://github.com/ingadhoc/aeroo_reports ingadhoc-aeroo_reports',
         # 'https://github.com/ingadhoc/argentina-reporting ingadhoc-argentina-reporting',
-        # 'https://github.com/ingadhoc/argentina-sale ingadhoc-argentina-sale',
+        'https://github.com/ingadhoc/argentina-sale ingadhoc-argentina-sale',
         # 'https://github.com/ingadhoc/hr ingadhoc-hr',
         # 'https://github.com/ingadhoc/miscellaneous ingadhoc-miscellaneous',
         # 'https://github.com/ingadhoc/multi-company ingadhoc-multi-company',
         # 'https://github.com/ingadhoc/multi-store ingadhoc-multi-store',
 
         # Fix porque falla la instalacion de l10n_ar_ux
-        # 'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
+        'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
 
         #'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
         # 'https://github.com/ingadhoc/partner ingadhoc-partner',
-        # 'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
+        'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
         # 'https://github.com/ingadhoc/product ingadhoc-product',
         # 'https://github.com/ingadhoc/project ingadhoc-project',
         # 'https://github.com/ingadhoc/purchase ingadhoc-purchase',
