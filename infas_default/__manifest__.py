@@ -28,7 +28,7 @@
         # Applicaciones del Cliente
         'sale_management',
         'sale_order_type',
-        # 'sale_order_type_ux',
+        'sale_order_type_ux',
         'purchase',
         'stock',
         'note',
