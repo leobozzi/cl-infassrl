@@ -57,3 +57,8 @@
 	path = ingadhoc/miscellaneous
 	url = git@github.com:ingadhoc/miscellaneous.git
 	branch = 15.0
+
+[submodule "leobozzi/odoo-addons-utils"]
+	path = leobozzi/odoo-addons-utils
+	url = git@github.com:leobozzi/odoo-addons-utils.git
+	branch = 15.0
