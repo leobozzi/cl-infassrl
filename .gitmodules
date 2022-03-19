@@ -42,3 +42,8 @@
 	path = ingadhoc/product
 	url = git@github.com:ingadhoc/product.git
 	branch = 15.0
+
+[submodule "ingadhoc/sale"]
+	path = ingadhoc/sale
+	url = git@github.com:ingadhoc/sale.git
+	branch = 15.0
