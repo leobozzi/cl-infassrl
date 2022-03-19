@@ -43,8 +43,8 @@
         # Contabilidad
         'account',
         'account_ux',
-        'account_check',
-        'account_financial_report',
+        # 'account_check',
+        # 'account_financial_report',
         # 'account_journal_lock_date',
         'account_journal_security',
         # 'accounting_pdf_reports',
