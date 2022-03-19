@@ -38,7 +38,7 @@
         # 'sale_crm_ux',
         # 'crm_stage_teams',
         'base_ux',
-        # 'stock_ux',
+        'stock_ux',
 
         # Contabilidad
         'account',
@@ -56,18 +56,18 @@
         # 'account_lock_to_date',
         # 'purchase_requisition',
         # 'purchase_requisition_stock',
-        # 'purchase_ux',
-        # 'account_statement_aeroo_report',
+        'purchase_ux',
+        'account_statement_aeroo_report',
         # 'account_bank_statement_clear_partner',
         # 'account_bank_statement_import',
-        # 'account_statement_move_import',
+        'account_statement_move_import',
         # 'account_bank_statement_import_move_line',
         # 'account_bank_statement_import_transfer_move',
         # 'account_bank_statement_import_txt_xlsx',
         # 'account_cash_invoice',
-        # 'sale_ux',
+        'sale_ux',
         # 'account_transfer_unreconcile',
-        # 'base_currency_inverse_rate',
+        'base_currency_inverse_rate',
 
         # Cybrosys
         # 'base_accounting_kit',
@@ -101,7 +101,7 @@
 
         # Utils
         # 'web_search_with_and',
-        # 'web_advanced_search',
+        'web_advanced_search',
         # 'auto_backup',
         # 'mass_editing',
         # 'intero_reload_form',
@@ -214,16 +214,16 @@
     'git-repos': [
         'https://github.com/leobozzi/cl-infassrl.git',
         # 'https://github.com/leobozzi/odoo-addons-utils bit-odoo-addons-utils',
-        # 'https://github.com/leobozzi/odoo-custom bit-odoo-custom',
+        'https://github.com/leobozzi/odoo-custom bit-odoo-custom',
         'git@github.com:odoo/enterprise.git -b 15.0',
 
         # Odoomates
         # ==========================================================================================
         # 'https://github.com/odoomates/odooapps odoomates-odooapps',
 
-        # CybtoAddons
+        # CybroAddons
         # ==========================================================================================
-        # 'https://github.com/CybroOdoo/CybroAddons cybro-addons',
+        'https://github.com/CybroOdoo/CybroAddons cybro-addons',
 
         # Gabriela Rivero
         # ==========================================================================================
@@ -280,7 +280,7 @@
         'https://github.com/OCA/sale-workflow oca-sale-workflow',
         # 'https://github.com/OCA/server-auth oca-server-auth',
         # 'https://github.com/OCA/server-backend oca-server-backend',
-        # 'https://github.com/OCA/server-tools oca-server-tools',
+        'https://github.com/OCA/server-tools oca-server-tools',
         # 'https://github.com/OCA/server-ux oca-server-ux',
         # 'https://github.com/OCA/social oca-social',
         # 'https://github.com/OCA/stock-logistics-barcode oca-stock-logistics-barcode',
@@ -315,7 +315,7 @@
         'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
         'https://github.com/ingadhoc/product ingadhoc-product',
         # 'https://github.com/ingadhoc/project ingadhoc-project',
-        # 'https://github.com/ingadhoc/purchase ingadhoc-purchase',
+        'https://github.com/ingadhoc/purchase ingadhoc-purchase',
         # 'https://github.com/ingadhoc/reporting-engine ingadhoc-reporting-engine',
         'https://github.com/ingadhoc/stock ingadhoc-stock',
         'https://github.com/ingadhoc/sale ingadhoc-sale',
