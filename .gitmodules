@@ -62,3 +62,8 @@
 	path = leobozzi/odoo-addons-utils
 	url = git@github.com:leobozzi/odoo-addons-utils.git
 	branch = 15.0
+
+[submodule "CybroOdoo/CybroAddons"]
+	path = CybroOdoo/CybroAddons
+	url = git@github.com:CybroOdoo/CybroAddons.git
+	branch = 15.0
