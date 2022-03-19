@@ -277,7 +277,7 @@
         # 'https://github.com/OCA/report-print-send oca-report-print-send',
         # 'https://github.com/OCA/reporting-engine oca-reporting-engine',
         # 'https://github.com/OCA/sale-reporting oca-sale-reporting',
-        # 'https://github.com/OCA/sale-workflow oca-sale-workflow',
+        'https://github.com/OCA/sale-workflow oca-sale-workflow',
         # 'https://github.com/OCA/server-auth oca-server-auth',
         # 'https://github.com/OCA/server-backend oca-server-backend',
         # 'https://github.com/OCA/server-tools oca-server-tools',
