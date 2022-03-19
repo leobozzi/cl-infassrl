@@ -46,11 +46,7 @@
         'account_check',
         'account_financial_report',
         # 'account_journal_lock_date',
-        'account_menu',
-        'partner_statement',
         'account_journal_security',
-        'account_netting',
-        # 'om_account_accountant',
         # 'accounting_pdf_reports',
         'product_price_taxes_included',
         # 'sale_last_price_info',
@@ -236,7 +232,7 @@
         # OCA
         # ==========================================================================================
         # 'https://github.com/OCA/account-closing oca-account-closing',
-        # 'https://github.com/OCA/account-financial-reporting oca-account-financial-reporting',  # noqa
+        'https://github.com/OCA/account-financial-reporting oca-account-financial-reporting',  # noqa
         # 'https://github.com/OCA/account-financial-tools oca-account-financial-tools',
         # 'https://github.com/OCA/account-payment oca-account-payment',
         # 'https://github.com/OCA/apps-store oca-apps-store',
@@ -317,7 +313,7 @@
         #'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
         # 'https://github.com/ingadhoc/partner ingadhoc-partner',
         'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
-        # 'https://github.com/ingadhoc/product ingadhoc-product',
+        'https://github.com/ingadhoc/product ingadhoc-product',
         # 'https://github.com/ingadhoc/project ingadhoc-project',
         # 'https://github.com/ingadhoc/purchase ingadhoc-purchase',
         # 'https://github.com/ingadhoc/reporting-engine ingadhoc-reporting-engine',
