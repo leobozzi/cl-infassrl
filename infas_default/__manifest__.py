@@ -28,7 +28,7 @@
         # Applicaciones del Cliente
         'sale_management',
         # 'sale_order_type',
-        # 'sale_order_type_ux',
+        'sale_order_type_ux',
         'purchase',
         'stock',
         'note',
@@ -318,7 +318,7 @@
         # 'https://github.com/ingadhoc/purchase ingadhoc-purchase',
         # 'https://github.com/ingadhoc/reporting-engine ingadhoc-reporting-engine',
         'https://github.com/ingadhoc/stock ingadhoc-stock',
-        # 'https://github.com/ingadhoc/sale ingadhoc-sale',
+        'https://github.com/ingadhoc/sale ingadhoc-sale',
         # 'https://github.com/ingadhoc/website ingadhoc-website',
     ],
     'docker-images': [
