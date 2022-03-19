@@ -37,7 +37,7 @@
         'crm',
         # 'sale_crm_ux',
         # 'crm_stage_teams',
-        # 'base_ux',
+        'base_ux',
         # 'stock_ux',
 
         # Contabilidad
@@ -303,7 +303,7 @@
         # 'https://github.com/ingadhoc/argentina-reporting ingadhoc-argentina-reporting',
         'https://github.com/ingadhoc/argentina-sale ingadhoc-argentina-sale',
         # 'https://github.com/ingadhoc/hr ingadhoc-hr',
-        # 'https://github.com/ingadhoc/miscellaneous ingadhoc-miscellaneous',
+        'https://github.com/ingadhoc/miscellaneous ingadhoc-miscellaneous',
         # 'https://github.com/ingadhoc/multi-company ingadhoc-multi-company',
         # 'https://github.com/ingadhoc/multi-store ingadhoc-multi-store',
 
