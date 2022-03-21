@@ -46,7 +46,7 @@
         # 'account_check',
         # 'account_financial_report',
         # 'account_journal_lock_date',
-        # 'account_journal_security',
+        'account_journal_security',
         # 'accounting_pdf_reports',
         # 'product_price_taxes_included',
         # 'sale_last_price_info',
@@ -67,7 +67,7 @@
         # 'account_cash_invoice',
         'sale_ux',
         # 'account_transfer_unreconcile',
-        # 'base_currency_inverse_rate',
+        'base_currency_inverse_rate',
 
         # Cybrosys
         # 'base_accounting_kit',
