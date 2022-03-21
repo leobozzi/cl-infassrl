@@ -101,9 +101,10 @@
 
         # Utils
         # 'web_search_with_and',
-        # 'web_advanced_search',
+        'web_advanced_search',
         # 'auto_backup',
-        # 'mass_editing',
+        'mass_editing',
+        'filter_multi_user',
         # 'intero_reload_form',
         # 'web_company_color',
         # 'odoo_whatsapp_integration',
@@ -281,7 +282,7 @@
         # 'https://github.com/OCA/server-auth oca-server-auth',
         # 'https://github.com/OCA/server-backend oca-server-backend',
         'https://github.com/OCA/server-tools oca-server-tools',
-        # 'https://github.com/OCA/server-ux oca-server-ux',
+        'https://github.com/OCA/server-ux oca-server-ux',
         # 'https://github.com/OCA/social oca-social',
         # 'https://github.com/OCA/stock-logistics-barcode oca-stock-logistics-barcode',
         # 'https://github.com/OCA/stock-logistics-reporting oca-stock-logistics-reporting', # noqa
