@@ -48,7 +48,7 @@
         # 'account_journal_lock_date',
         'account_journal_security',
         # 'accounting_pdf_reports',
-        # 'product_price_taxes_included',
+        'product_price_taxes_included',
         # 'sale_last_price_info',
         # 'purchase_last_price_info',
         # 'account_lock',
@@ -102,11 +102,11 @@
         # Utils
         # 'web_search_with_and',
         'web_advanced_search',
-        # 'auto_backup',
+        'auto_backup',
         'mass_editing',
         'filter_multi_user',
-        # 'intero_reload_form',
-        # 'web_company_color',
+        'web_refresher',
+        'web_company_color',
         # 'odoo_whatsapp_integration',
 
     ],
@@ -234,17 +234,17 @@
         # ==========================================================================================
         # 'https://github.com/OCA/account-closing oca-account-closing',
         'https://github.com/OCA/account-financial-reporting oca-account-financial-reporting',  # noqa
-        # 'https://github.com/OCA/account-financial-tools oca-account-financial-tools',
-        # 'https://github.com/OCA/account-payment oca-account-payment',
+        'https://github.com/OCA/account-financial-tools oca-account-financial-tools',
+        'https://github.com/OCA/account-payment oca-account-payment',
         # 'https://github.com/OCA/apps-store oca-apps-store',
-        # 'https://github.com/OCA/bank-payment oca-bank-payment',
-        # 'https://github.com/OCA/bank-statement-import oca-bank-statement-import',
-        # 'https://github.com/OCA/brand oca-brand',
+        'https://github.com/OCA/bank-payment oca-bank-payment',
+        'https://github.com/OCA/bank-statement-import oca-bank-statement-import',
+        'https://github.com/OCA/brand oca-brand',
         # 'https://github.com/OCA/business-requirement oca-business-requirement',
         # 'https://github.com/OCA/commission oca-commission',
         # 'https://github.com/OCA/contract oca-contract',
         # 'https://github.com/OCA/credit-control oca-credit-control',
-        # 'https://github.com/OCA/crm oca-crm',
+        'https://github.com/OCA/crm oca-crm',
         # 'https://github.com/OCA/currency oca-currency',
         # 'https://github.com/OCA/ddmrp oca-ddmrp',
         # 'https://github.com/OCA/delivery-carrier oca-delivery-carrier',
@@ -258,7 +258,7 @@
         # 'https://github.com/OCA/hr-attendance oca-hr-attendance',
         # 'https://github.com/OCA/hr-timesheet oca-hr-timesheet',
         # 'https://github.com/OCA/knowledge oca-knowledge',
-        # 'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse'
+        'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse'
         # 'https://github.com/OCA/management-system oca-management-system',
         # 'https://github.com/OCA/manufacture oca-manufacture',
         # 'https://github.com/OCA/margin-analysis oca-margin-analysis',
@@ -276,7 +276,7 @@
         'https://github.com/OCA/purchase-workflow oca-purchase-workflow',
         # 'https://github.com/OCA/queue oca-queue',
         # 'https://github.com/OCA/report-print-send oca-report-print-send',
-        # 'https://github.com/OCA/reporting-engine oca-reporting-engine',
+        'https://github.com/OCA/reporting-engine oca-reporting-engine',
         # 'https://github.com/OCA/sale-reporting oca-sale-reporting',
         'https://github.com/OCA/sale-workflow oca-sale-workflow',
         # 'https://github.com/OCA/server-auth oca-server-auth',
@@ -288,11 +288,11 @@
         # 'https://github.com/OCA/stock-logistics-reporting oca-stock-logistics-reporting', # noqa
         # 'https://github.com/OCA/stock-logistics-transport oca-stock-logistics-transport', # noqa
         # 'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse', # noqa
-        # 'https://github.com/OCA/stock-logistics-workflow oca-stock-logistics-workflow',
+        'https://github.com/OCA/stock-logistics-workflow oca-stock-logistics-workflow',
         # 'https://github.com/OCA/timesheet oca-timesheet',
         # 'https://github.com/OCA/vertical-association oca-vertical-association',
         # 'https://github.com/OCA/website oca-website',
-        'https://github.com/OCA/web.git',
+        'https://github.com/OCA/web oca-web',
         # 'https://github.com/OCA/account-analytic',
 
         # ADHOC
@@ -311,7 +311,7 @@
         # Fix porque falla la instalacion de l10n_ar_ux
         'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
 
-        #'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
+        # 'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
         # 'https://github.com/ingadhoc/partner ingadhoc-partner',
         'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
         'https://github.com/ingadhoc/product ingadhoc-product',
