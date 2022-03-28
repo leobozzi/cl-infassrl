@@ -56,7 +56,7 @@ services:
       - postgres:db
     environment:
       - SERVER_MODE=
-    labels:
+    labels: 
       # router rou-odoo --> Acceso a odoo en puerto 80
       - traefik.http.routers.rou-odoo.rule=Host(`${SITE_DOMAIN}`)
       - traefik.http.routers.rou-odoo.entrypoints=web
