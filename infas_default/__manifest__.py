@@ -121,7 +121,7 @@
 
     'env-ver': '2',
     'odoo-license': 'EE',
-    'port': '8169',
+    'port': '8069',
     # 'server_user': ''
 
     'config': [
@@ -182,7 +182,7 @@
             'geoip_database = /usr/share/GeoIP/GeoLite2-City.mmdb',
             'http_enable = True',
             'http_interface =',
-            'http_port = 8169',
+            'http_port = 8069',
             'limit_time_real_cron = -1',
             'list_db = True',
             'log_db = False',
@@ -193,7 +193,7 @@
             'osv_memory_age_limit = 1.0',
             'osv_memory_count_limit = False',
             'pg_path =',
-            'longpolling_port = 8172',
+            'longpolling_port = 8072',
             'proxy_mode = True',
             'reportgz = False',
             'screencasts =',
