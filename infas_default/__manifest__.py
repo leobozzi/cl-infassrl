@@ -28,7 +28,7 @@
         # Applicaciones del Cliente
         'sale_management',
         'sale_order_type',
-        'sale_order_type_ux',
+        # 'sale_order_type_ux',
         'purchase',
         'stock',
         'note',
@@ -37,12 +37,12 @@
         'crm',
         # 'sale_crm_ux',
         # 'crm_stage_teams',
-        'base_ux',
-        'stock_ux',
+        # 'base_ux',
+        # 'stock_ux',
 
         # Contabilidad
         'account',
-        'account_ux',
+        # 'account_ux',
         # 'account_check',
         # 'account_financial_report',
         # 'account_journal_lock_date',
@@ -56,7 +56,7 @@
         # 'account_lock_to_date',
         # 'purchase_requisition',
         # 'purchase_requisition_stock',
-        'purchase_ux',
+        # 'purchase_ux',
         # 'account_statement_aeroo_report',
         # 'account_bank_statement_clear_partner',
         # 'account_bank_statement_import',
@@ -65,7 +65,7 @@
         # 'account_bank_statement_import_transfer_move',
         # 'account_bank_statement_import_txt_xlsx',
         # 'account_cash_invoice',
-        'sale_ux',
+        # 'sale_ux',
         # 'account_transfer_unreconcile',
         'base_currency_inverse_rate',
 
