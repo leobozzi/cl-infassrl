@@ -35,20 +35,21 @@
         'board',
         'calendar',
         'crm',
-        # 'sale_crm_ux',
+        'crm_teams_ux',
         # 'crm_stage_teams',
-        # 'base_ux',
+        'base_ux',
         # 'stock_ux',
 
         # Contabilidad
         'account',
-        # 'account_ux',
+        'account_accountant',
+        'account_ux',
         # 'account_check',
         # 'account_financial_report',
         # 'account_journal_lock_date',
-        'account_journal_security',
+        # 'account_journal_security',
         # 'accounting_pdf_reports',
-        'product_price_taxes_included',
+        # 'product_price_taxes_included',
         # 'sale_last_price_info',
         # 'purchase_last_price_info',
         # 'account_lock',
@@ -67,7 +68,7 @@
         # 'account_cash_invoice',
         # 'sale_ux',
         # 'account_transfer_unreconcile',
-        'base_currency_inverse_rate',
+        # 'base_currency_inverse_rate',
 
         # Cybrosys
         # 'base_accounting_kit',
@@ -193,7 +194,6 @@
             'osv_memory_age_limit = 1.0',
             'osv_memory_count_limit = False',
             'pg_path =',
-            'longpolling_port = 8072',
             'proxy_mode = True',
             'reportgz = False',
             'screencasts =',
@@ -243,9 +243,9 @@
         # 'https://github.com/OCA/business-requirement oca-business-requirement',
         # 'https://github.com/OCA/commission oca-commission',
         # 'https://github.com/OCA/contract oca-contract',
-        # 'https://github.com/OCA/credit-control oca-credit-control',
+        'https://github.com/OCA/credit-control oca-credit-control',
         'https://github.com/OCA/crm oca-crm',
-        # 'https://github.com/OCA/currency oca-currency',
+        'https://github.com/OCA/currency oca-currency',
         # 'https://github.com/OCA/ddmrp oca-ddmrp',
         # 'https://github.com/OCA/delivery-carrier oca-delivery-carrier',
         # 'https://github.com/OCA/e-commerce oca-e-commerce',
@@ -264,13 +264,13 @@
         # 'https://github.com/OCA/margin-analysis oca-margin-analysis',
         # 'https://github.com/OCA/manufacture-reporting oca-manufacture-reporting',
         # 'https://github.com/OCA/multi-company oca-multi-company',
-        # 'https://github.com/OCA/oca-custom oca-oca-custom',
+        'https://github.com/OCA/oca-custom oca-oca-custom',
         # 'https://github.com/OCA/operating-unit oca-operating-unit',
         # 'https://github.com/OCA/payroll.git oca-payroll',
-        # 'https://github.com/OCA/partner-contact oca-partner-contact',
+        'https://github.com/OCA/partner-contact oca-partner-contact',
         # 'https://github.com/OCA/pos oca-pos',
-        # 'https://github.com/OCA/product-attribute oca-product-attribute',
-        # 'https://github.com/OCA/product-pack oca-product-pack',
+        'https://github.com/OCA/product-attribute oca-product-attribute',
+        'https://github.com/OCA/product-pack oca-product-pack',
         # 'https://github.com/OCA/project oca-project',
         # 'https://github.com/OCA/project-reporting oca-project-reporting',
         'https://github.com/OCA/purchase-workflow oca-purchase-workflow',
@@ -284,35 +284,35 @@
         'https://github.com/OCA/server-tools oca-server-tools',
         'https://github.com/OCA/server-ux oca-server-ux',
         # 'https://github.com/OCA/social oca-social',
-        # 'https://github.com/OCA/stock-logistics-barcode oca-stock-logistics-barcode',
-        # 'https://github.com/OCA/stock-logistics-reporting oca-stock-logistics-reporting', # noqa
-        # 'https://github.com/OCA/stock-logistics-transport oca-stock-logistics-transport', # noqa
-        # 'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse', # noqa
+        'https://github.com/OCA/stock-logistics-barcode oca-stock-logistics-barcode',
+        'https://github.com/OCA/stock-logistics-reporting oca-stock-logistics-reporting',  # noqa
+        'https://github.com/OCA/stock-logistics-transport oca-stock-logistics-transport',  # noqa
+        'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse',  # noqa
         'https://github.com/OCA/stock-logistics-workflow oca-stock-logistics-workflow',
         # 'https://github.com/OCA/timesheet oca-timesheet',
         # 'https://github.com/OCA/vertical-association oca-vertical-association',
         # 'https://github.com/OCA/website oca-website',
         'https://github.com/OCA/web oca-web',
-        # 'https://github.com/OCA/account-analytic',
+        'https://github.com/OCA/account-analytic',
 
         # ADHOC
         # ==========================================================================================
         # 'https://github.com/ingadhoc/account-analytic ingadhoc-account-analytic',
         'https://github.com/ingadhoc/account-financial-tools ingadhoc-account-financial-tools',  # noqa
         'https://github.com/ingadhoc/account-payment ingadhoc-account-payment',
-        # 'https://github.com/ingadhoc/aeroo_reports ingadhoc-aeroo_reports',
+        'https://github.com/ingadhoc/aeroo_reports ingadhoc-aeroo_reports',
         # 'https://github.com/ingadhoc/argentina-reporting ingadhoc-argentina-reporting',
         'https://github.com/ingadhoc/argentina-sale ingadhoc-argentina-sale',
         # 'https://github.com/ingadhoc/hr ingadhoc-hr',
         'https://github.com/ingadhoc/miscellaneous ingadhoc-miscellaneous',
         # 'https://github.com/ingadhoc/multi-company ingadhoc-multi-company',
-        # 'https://github.com/ingadhoc/multi-store ingadhoc-multi-store',
+        'https://github.com/ingadhoc/multi-store ingadhoc-multi-store',
 
         # Fix porque falla la instalacion de l10n_ar_ux
         'https://github.com/ingadhoc/odoo-argentina ingadhoc-odoo-argentina',
 
         # 'https://github.com/ingadhoc/odoo-argentina-ce ingadhoc-odoo-argentina-ce',
-        # 'https://github.com/ingadhoc/partner ingadhoc-partner',
+        'https://github.com/ingadhoc/partner ingadhoc-partner',
         'https://github.com/ingadhoc/odoo-argentina-ee ingadhoc-odoo-argentina-ee',
         'https://github.com/ingadhoc/product ingadhoc-product',
         # 'https://github.com/ingadhoc/project ingadhoc-project',
