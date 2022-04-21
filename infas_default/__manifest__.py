@@ -57,7 +57,7 @@
         # 'account_lock_to_date',
         # 'purchase_requisition',
         # 'purchase_requisition_stock',
-        # 'purchase_ux',
+        'purchase_ux',
         # 'account_statement_aeroo_report',
         # 'account_bank_statement_clear_partner',
         # 'account_bank_statement_import',
@@ -66,9 +66,9 @@
         # 'account_bank_statement_import_transfer_move',
         # 'account_bank_statement_import_txt_xlsx',
         # 'account_cash_invoice',
-        # 'sale_ux',
+        'sale_ux',
         # 'account_transfer_unreconcile',
-        # 'base_currency_inverse_rate',
+        'base_currency_inverse_rate',
 
         # Cybrosys
         # 'base_accounting_kit',
