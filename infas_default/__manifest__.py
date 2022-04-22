@@ -323,7 +323,7 @@
         # 'https://github.com/ingadhoc/website ingadhoc-website',
     ],
     'docker-images': [
-       'odoo lbozzi/odoo-docker-lb:14.0',
+       'odoo lbozzi/odoo-docker-lb:15.0',
        'postgres postgres:12.10-alpine',
     ]
 }
