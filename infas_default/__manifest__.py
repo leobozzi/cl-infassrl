@@ -258,7 +258,6 @@
         # 'https://github.com/OCA/hr-attendance oca-hr-attendance',
         # 'https://github.com/OCA/hr-timesheet oca-hr-timesheet',
         # 'https://github.com/OCA/knowledge oca-knowledge',
-        'https://github.com/OCA/stock-logistics-warehouse oca-stock-logistics-warehouse',
         # 'https://github.com/OCA/management-system oca-management-system',
         # 'https://github.com/OCA/manufacture oca-manufacture',
         # 'https://github.com/OCA/margin-analysis oca-margin-analysis',
