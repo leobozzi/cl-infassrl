@@ -329,7 +329,7 @@
         'https://github.com/quilsoft-org/odoo-argentina-ee quilsoft-odoo-argentina-ee',
         'https://github.com/quilsoft-org/account-payment quilsoft-account-payment',
         'https://github.com/quilsoft-org/account-financial-tools quilsoft-account-financial-tools',
-        'https://github.com/quilsoft-org/odoo-argentina-fix quilsoft-odoo-argentina-fix',
+        #'https://github.com/quilsoft-org/odoo-argentina-fix quilsoft-odoo-argentina-fix',
         'https://github.com/quilsoft-org/odoo-argentina-ce quilsoft-odoo-argentina-ce',
 
 
