@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------------
 {
     'name': 'infassrl',
-    'version': '14.0.1.0.0',
+    'version': '15.0.1.0.0',
     'license': 'Other OSI approved licence',
     'category': 'Tools',
     'summary': 'Customización Infas SRL',
