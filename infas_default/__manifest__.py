@@ -216,7 +216,7 @@
         'https://github.com/leobozzi/cl-infassrl.git',
         'https://github.com/leobozzi/odoo-addons-utils bit-odoo-addons-utils',
         # 'https://github.com/leobozzi/odoo-custom bit-odoo-custom',
-        'git@github.com:odoo/enterprise.git -b 14.0',
+        'git@github.com:odoo/enterprise.git -b 15.0',
 
         # Odoomates
         # ==========================================================================================
