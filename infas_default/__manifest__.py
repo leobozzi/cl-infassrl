@@ -92,7 +92,7 @@
 
         # EE
         'l10n_ar_edi',
-        'l10n_ar_reports',
+        # 'l10n_ar_reports',
         'l10n_ar_account_tax_settlement',
         'l10n_ar_edi_ux',
         'l10n_ar_currency_update',
