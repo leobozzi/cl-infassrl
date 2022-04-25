@@ -291,7 +291,7 @@
         # 'https://github.com/OCA/timesheet oca-timesheet',
         # 'https://github.com/OCA/vertical-association oca-vertical-association',
         # 'https://github.com/OCA/website oca-website',
-        # 'https://github.com/OCA/web oca-web',
+        'https://github.com/OCA/web oca-web',
         # 'https://github.com/OCA/account-analytic',
 
         # ADHOC
