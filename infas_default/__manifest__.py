@@ -27,8 +27,6 @@
     'depends': [
         # Applicaciones del Cliente
         'sale_management',
-        # 'sale_order_type',
-        # 'sale_order_type_ux',
         'purchase',
         'stock',
         'note',
@@ -37,17 +35,14 @@
         'crm',
         # 'crm_teams_ux',
         # 'crm_stage_teams',
-        # 'base_ux',
-        # 'stock_ux',
+        'base_ux',
 
         # Contabilidad
         'account',
         'account_accountant',
-        # 'account_ux',
-        # 'account_check',
-        # 'account_financial_report',
+        'account_financial_report',
         # 'account_journal_lock_date',
-        # 'account_journal_security',
+        'account_journal_security',
         # 'accounting_pdf_reports',
         # 'product_price_taxes_included',
         # 'sale_last_price_info',
@@ -57,7 +52,7 @@
         # 'account_lock_to_date',
         # 'purchase_requisition',
         # 'purchase_requisition_stock',
-        # 'purchase_ux',
+        'purchase_ux',
         # 'account_statement_aeroo_report',
         # 'account_bank_statement_clear_partner',
         # 'account_bank_statement_import',
@@ -66,7 +61,7 @@
         # 'account_bank_statement_import_transfer_move',
         # 'account_bank_statement_import_txt_xlsx',
         # 'account_cash_invoice',
-        # 'sale_ux',
+        'sale_ux',
         # 'account_transfer_unreconcile',
         # 'base_currency_inverse_rate',
 
@@ -102,13 +97,15 @@
 
         # Utils
         # 'web_search_with_and',
-        # 'web_advanced_search',
-        # 'auto_backup',
-        # 'mass_editing',
-        # 'filter_multi_user',
-        # 'web_refresher',
-        # 'web_company_color',
+        'web_advanced_search',
+        'auto_backup',
+        'mass_editing',
+        'filter_multi_user',
+        'web_refresher',
+        'web_company_color',
         # 'odoo_whatsapp_integration',
+        'mis_builder',
+        'mis_builder_cash_flow',
 
     ],
     'data': [
