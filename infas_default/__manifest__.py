@@ -63,7 +63,9 @@
         # 'account_cash_invoice',
         'sale_ux',
         # 'account_transfer_unreconcile',
-        # 'base_currency_inverse_rate',
+        'base_currency_inverse_rate',
+        'product_currency',
+
 
         # Cybrosys
         # 'base_accounting_kit',
