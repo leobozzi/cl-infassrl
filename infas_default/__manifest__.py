@@ -78,6 +78,7 @@
         'l10n_ar_account_withholding',
         'l10n_ar_sale',
         'l10n_ar_stock',
+        'l10n_ar_stock_delivery',
         # 'padron_afip',
         # 'report_qweb_pdf_watermark',
 
