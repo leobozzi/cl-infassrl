@@ -321,6 +321,6 @@
     ],
     'docker-images': [
        'odoo lbozzi/odoo-docker-lb:15.0',
-       'postgres postgres:11-alpine',
+       'postgres postgres:12.10-alpine',
     ]
 }
