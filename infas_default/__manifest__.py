@@ -112,6 +112,7 @@
 
     ],
     'data': [
+        'view/custom_sale_order_view.xml',
     ],
     'test': [
     ],

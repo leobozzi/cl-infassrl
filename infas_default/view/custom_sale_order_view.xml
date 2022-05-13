@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Main Sale Order FORM view-->
+	<record id="custom_sale_order_form_view" model="ir.ui.view">
+        <field name="name">custom_sale_order_form_view</field>
+		<field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//group[@name='sale_header']//group[@name='partner_details']//field[@name='partner_shipping_id']" position="after">
+                <field name="client_order_ref" string="OC del Cliente"/>
+            </xpath>
+		</field>
+	</record>
+</odoo>
