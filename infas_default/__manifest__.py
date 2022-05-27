@@ -65,6 +65,11 @@
         # 'account_transfer_unreconcile',
         # 'base_currency_inverse_rate',
         'product_currency',
+        'account_balance_line',
+        'account_invoice_move_currency',
+        'account_invoice_prices_update',
+        'account_move_line_menu',
+        'account_usability',
 
 
         # Cybrosys
@@ -97,6 +102,12 @@
         'l10n_ar_account_tax_settlement',
         'l10n_ar_edi_ux',
         'l10n_ar_currency_update',
+
+        # Inventory
+        'stock_barcode',
+        'barcodes_gs1_nomenclature',
+        'delivery_barcode',
+        'product_brand',
 
         # Utils
         # 'web_search_with_and',
