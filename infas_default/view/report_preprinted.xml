@@ -53,6 +53,15 @@
         <template id="report_preprinted_internal_header">
             <div class="page" style="zoom:1.25;font-size:0.8em;">
                 <div t-if="o.partner_id" name="partner_header" style="position:absolute;">
+                    <span style="position:absolute;left:160mm;top:5mm;width:130mm;font-size:1em;">
+                        <a t-field="o.date_done"/>
+                    </span>
+                    <span style="position:absolute;left:110mm;top:5mm;width:130mm;font-size:1em;">
+                        <a>Remito Nro.: </a>
+                        <t t-as="voucher" t-foreach="o.voucher_ids">
+                            <a t-field="voucher.name"/>
+                        </t>
+                    </span>
                     <span style="position:absolute;left:70mm;top:10mm;width:130mm;">DOCUMENTO NO VÁLIDO COMO FACTURA</span>
                     <span style="position:absolute;left:30mm;top:37mm;width:130mm;font-size:1em;" t-field="o.partner_id" />
                     <span style="position:absolute;left:30mm;top:45mm;width:130mm;" t-field="o.partner_id.street" />
