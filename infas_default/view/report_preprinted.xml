@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- A4 Paper format -->
+        <record id="paperformat_preprinted" model="report.paperformat">
+            <field name="name">pre printed</field>
+            <field eval="False" name="default" />
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field eval="False" name="header_line" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">72</field>
+        </record>
+
+        <!-- Internal Move design -->
+        <template id="report_preprinted_internal_move">
+            <div class="page" style="zoom:1.25;font-size:0.8em;">
+                <div id="item_box" style="position:absolute;left:10mm;top:70mm">
+                    <table class="tabel table-sm" t-if="o.move_line_ids and o.move_ids_without_package">
+                        <tbody>
+                            <t t-as="line" t-foreach="chunk_lines">
+                                <tr>
+                                    <td>
+                                        <span t-esc="line_index + 1" />
+                                    </td>
+                                    <td><span>&#160;&#160;</span></td>
+                                    <td>
+                                        <span t-field="line.qty_done" />
+                                    </td>
+                                    <td><span>&#160;&#160;</span></td>
+                                    <td>
+                                        <span t-field="line.product_id.default_code" />
+                                    </td>
+                                    <td><span>&#160;&#160;&#160;&#160;</span></td>
+                                    <td>
+                                        <span style="overflow:hidden;white-space: nowrap;" t-field="line.product_id" />
+                                    </td>
+                                    <td><span></span></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="width:160mm;position:absolute; left:25mm;top:130mm;height:10mm; overflow:hidden;" t-field="o.note" />
+        </template>
+
+        <!-- Internal Header design -->
+        <template id="report_preprinted_internal_header">
+            <div class="page" style="zoom:1.25;font-size:0.8em;">
+                <div t-if="o.partner_id" name="partner_header" style="position:absolute;">
+                    <span style="position:absolute;left:70mm;top:10mm;width:130mm;">DOCUMENTO NO VÁLIDO COMO FACTURA</span>
+                    <span style="position:absolute;left:30mm;top:37mm;width:130mm;font-size:1em;" t-field="o.partner_id" />
+                    <span style="position:absolute;left:30mm;top:45mm;width:130mm;" t-field="o.partner_id.street" />
+                    <span style="position:absolute;left:30mm;top:50mm;width:130mm;">
+                        <a t-field="o.partner_id.city" />
+                        <a t-field="o.partner_id.state_id" />
+                        <a t-field="o.partner_id.zip" />
+                    </span>
+                    <span style="position:absolute;left:30mm;top:55mm;width:130mm;" t-field="o.partner_id.l10n_ar_afip_responsibility_type_id" />
+                    <span style="position:absolute;left:105mm;top:55mm;width:130mm;" t-field="o.partner_id.vat" />
+                    <span style="position:absolute;left:170mm;top:55mm;width:130mm;" t-field="o.partner_id.l10n_ar_gross_income_number" />
+                </div>
+                <div t-if="o.partner_id" name="sale_order_header" style="position:absolute;">
+                    <span style="position:absolute;left:30mm;top:65mm;width:130mm;font-size:1em;" t-field="o.origin" />
+                    <span style="position:absolute;left:65mm;top:60mm;width:130mm;font-size:1em;font-weight:bold;">Medio de Transporte:</span>
+                    <span style="position:absolute;left:160mm;top:65mm;width:130mm;" t-field="o.partner_id.ref" />
+                </div>
+                <div t-if="o.move_line_ids_without_package" name="move_line" style="position:absolute;">
+                    <t t-call="infas_default.report_preprinted_internal_move" />
+                </div>
+            </div>
+        </template>
+
+        <!-- Print 2 Pages -->
+        <template id="report_preprinted_pages">
+            <div class="page" style="zoom:1.25;font-size:0.8em;">
+                <div style="width:100%; top:10mm;height:290mm; position:absolute;">
+                    <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">ORIGINAL</span>
+                    <t t-call="infas_default.report_preprinted_internal_header" />
+                </div>
+                <div style="width:100%; top:360mm;height:290mm;position:absolute;">
+                    <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
+                    <t t-call="infas_default.report_preprinted_internal_header" />
+                </div>
+            </div>
+        </template>
+
+        <!-- Template -->
+        <template id="report_preprinted">
+            <t t-call="web.html_container">
+                <t t-as="o" t-foreach="docs">
+                    <div class="article" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                        <t t-as="chunk_lines" t-foreach="[o.move_line_ids_without_package[i:i+15] for i in range(0,len(o.move_line_ids_without_package),15)]">
+                            <t t-call="infas_default.report_preprinted_pages" />
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <!-- Add report -->
+        <report id="infas_report_preprinted" model="stock.picking" name="infas_default.report_preprinted" report_type="qweb-pdf" string="Preimpreso" />
+        <record id="infas_report_preprinted" model="ir.actions.report">
+            <field name="paperformat_id" ref="paperformat_preprinted" />
+        </record>
+    </data>
+</odoo>
