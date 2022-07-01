@@ -19,7 +19,7 @@
         <!-- Internal Move design -->
         <template id="report_preprinted_internal_move">
             <div class="page" style="zoom:1.25;font-size:0.8em;">
-                <div id="item_box" style="position:absolute;left:10mm;top:70mm">
+                <div id="item_box" style="position:absolute;left:10mm;top:75mm">
                     <table class="tabel table-sm" t-if="o.move_line_ids and o.move_ids_without_package">
                         <tbody>
                             <t t-as="line" t-foreach="chunk_lines">
@@ -67,7 +67,7 @@
                 </div>
                 <div t-if="o.partner_id" name="sale_order_header" style="position:absolute;">
                     <span style="position:absolute;left:30mm;top:65mm;width:130mm;font-size:1em;" t-field="o.origin" />
-                    <span style="position:absolute;left:65mm;top:60mm;width:130mm;font-size:1em;font-weight:bold;">Medio de Transporte:</span>
+                    <span style="position:absolute;left:65mm;top:65mm;width:130mm;font-size:1em;font-weight:bold;">Medio de Transporte:</span>
                     <span style="position:absolute;left:160mm;top:65mm;width:130mm;" t-field="o.partner_id.ref" />
                 </div>
                 <div t-if="o.move_line_ids_without_package" name="move_line" style="position:absolute;">
@@ -83,7 +83,7 @@
                     <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">ORIGINAL</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
-                <div style="width:100%; top:360mm;height:290mm;position:absolute;">
+                <div style="width:100%; top:365mm;height:290mm;position:absolute;">
                     <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
