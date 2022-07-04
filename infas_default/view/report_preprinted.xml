@@ -53,10 +53,10 @@
         <template id="report_preprinted_internal_header">
             <div class="page" style="zoom:1.25;font-size:0.8em;">
                 <div t-if="o.partner_id" name="partner_header" style="position:absolute;">
-                    <span style="position:absolute;left:160mm;top:5mm;width:130mm;font-size:1em;">
+                    <span style="position:absolute;left:155mm;top:5mm;width:130mm;font-size:1em;">
                         <a t-field="o.date_done"/>
                     </span>
-                    <span style="position:absolute;left:160mm;top:10mm;width:130mm;font-size:1em;">
+                    <span style="position:absolute;left:155mm;top:10mm;width:130mm;font-size:1em;">
                         <a>Remito Nro.: </a>
                         <t t-as="voucher" t-foreach="o.voucher_ids">
                             <a t-field="voucher.name"/>

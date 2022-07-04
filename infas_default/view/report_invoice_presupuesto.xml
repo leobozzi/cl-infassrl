@@ -2,42 +2,26 @@
 <odoo>
     <data>
 
-        <!-- Print Page -->
-        <template id="reportreport_invoice_presupuesto_page">
-            <div class="page" >
-                <!-- Header -->
-                <div t-if="o.partner_id" name="partner_header" style="position:absolute;">
-                    <span style="position:absolute;left:70mm;top:10mm;width:130mm;">DOCUMENTO NO VÁLIDO COMO FACTURA</span>
-                    <span style="position:absolute;left:30mm;top:37mm;width:130mm;font-size:1em;" t-field="o.partner_id" />
-                    <span style="position:absolute;left:30mm;top:45mm;width:130mm;" t-field="o.partner_id.street" />
-                    <span style="position:absolute;left:30mm;top:50mm;width:130mm;">
-                        <a t-field="o.partner_id.city" />
-                        <a t-field="o.partner_id.state_id" />
-                        <a t-field="o.partner_id.zip" />
-                    </span>
-                    <span style="position:absolute;left:30mm;top:55mm;width:130mm;" t-field="o.partner_id.l10n_ar_afip_responsibility_type_id" />
-                    <span style="position:absolute;left:105mm;top:55mm;width:130mm;" t-field="o.partner_id.vat" />
-                    <span style="position:absolute;left:170mm;top:55mm;width:130mm;" t-field="o.partner_id.l10n_ar_gross_income_number" />
-                </div>
-            </div>
+        <template id="report_invoice_presupuesto_page" inherit_id="l10n_ar.report_invoice_document" primary="True">
+            <xpath expr="///main/div//div" position="after">
+                <div>Holas</div>
+            </xpath>
         </template>
 
         <!-- Template -->
         <template id="report_invoice_presupuesto">
             <t t-call="web.html_container">
                 <t t-as="o" t-foreach="docs">
-                    <div class="article" t-att-data-oe-lang="o and o.env.context.get('lang')">
-                        <t t-call="infas_default.reportreport_invoice_presupuesto_page" />
+                    <div t-att-data-oe-lang="o and o.env.context.get('lang')">
+                        <t t-call="infas_default.report_invoice_presupuesto_page" />
                     </div>
                 </t>
             </t>
         </template>
 
         <!-- Add report -->
-        <report id="infas_report_invoice_presupuesto" model="account.move" name="infas_default.report_invoice_presupuesto" report_type="qweb-pdf" string="Presupuesto" />
-        <record id="infas_report_invoice_presupuesto" model="ir.actions.report">
-            <field name="paperformat_id" ref="paperformat_preprinted" />
-        </record>
+        <report id="infas_report_invoice_presupuesto" model="account.move" name="infas_default.report_invoice_presupuesto" report_type="qweb-html" string="Presupuesto" />
+
     </data>
 </odoo>
         
