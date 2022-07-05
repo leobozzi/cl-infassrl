@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <!-- Factura de Exportación -->
+         <template id="report_invoice_document" inherit_id="l10n_ar.report_invoice_document">
+            <!-- l10n_latam_document_type_id_code -->
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            <t t-if="o.invoice_origin" position="after">
+                <t t-if="o.l10n_latam_document_type_id_code in ['19','20','21']">
+                    <br />
+                    <strong>Destino del Comprobante:</strong>
+                    <span t-field="o.partner_id.state_id.country_id.name"/>
+                </t>
+            </t>
+         </template>
+
+    </data>
+</odoo>

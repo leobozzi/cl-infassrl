@@ -126,6 +126,7 @@
         'view/custom_sale_order_view.xml',
         'view/report_preprinted.xml',
         'view/report_invoice_presupuesto.xml',
+        'view/report_export_invoice.xml',
     ],
     'test': [
     ],
