@@ -174,7 +174,6 @@
                                         </td>
                                     </t>
                                 </tr>
-
                                 <t t-if="current_section and (line_last or lines[line_index+1].display_type == 'line_section')">
                                     <tr class="is-subtotal text-right">
                                         <td colspan="99">
@@ -190,20 +189,15 @@
                         <div id="total" class="row">
                             <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
                                 <table class="table table-sm" style="page-break-inside: avoid;">
-
                                     <!--Tax totals-->
                                     <t t-set="tax_totals" t-value="json.loads(o.tax_totals_json)" />
                                     <t t-call="account.document_tax_totals" />
-
                                 </table>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </t>
-
         </template>
 
         <!-- Template -->

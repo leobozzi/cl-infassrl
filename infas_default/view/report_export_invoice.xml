@@ -10,7 +10,8 @@
                     <span>ID Impositivo:</span>
                 </t>
                 <t t-if="o.l10n_latam_document_type_id_code not in ['19','20','21']">
-                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label" />:
+                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label" />
+                    :
                 </t>
             </t>
             <!-- Destino del Comprobante -->
@@ -21,6 +22,21 @@
                     <span t-field="o.partner_id.state_id.country_id.name" />
                 </t>
             </t>
+            <!-- Incoterms -->
+            <t t-if="o.invoice_incoterm_id" position="replace">
+                <br />
+                <strong>Incoterm: </strong>
+                <span t-field="o.invoice_incoterm_id.code" />
+                -
+                <span t-field="o.invoice_incoterm_id.name" />
+            </t>
+        </template>
+
+        <template id="account_report_invoice_document" inherit_id="account.report_invoice_document">
+            <t t-set="o" t-value="o.with_context(lang=lang)" />
+            <!-- Remove last Incoterms -->
+            <p t-if="o.invoice_incoterm_id" name="incoterm" position="replace" />
+
         </template>
 
     </data>
