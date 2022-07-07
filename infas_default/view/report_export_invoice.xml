@@ -8,9 +8,12 @@
             <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" position="replace">
                 <t t-if="o.l10n_latam_document_type_id_code in ['19','20','21']">
                     <span>ID Impositivo:</span>
+                    <span t-esc="o.partner_id.vat"/>
+                    
                 </t>
                 <t t-if="o.l10n_latam_document_type_id_code not in ['19','20','21']">
-                    <t t-esc="o.partner_id.vat" id="inv_tax_id_label" />
+                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label" />
+                    :
                 </t>
             </t>
             <!-- Destino del Comprobante -->
