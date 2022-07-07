@@ -5,17 +5,14 @@
         <template id="report_invoice_document" inherit_id="l10n_ar.report_invoice_document">
             <t t-set="o" t-value="o.with_context(lang=lang)" />
             <!-- ID Impositivo -->
-            <!--
             <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" position="replace">
                 <t t-if="o.l10n_latam_document_type_id_code in ['19','20','21']">
                     <span>ID Impositivo:</span>
                 </t>
                 <t t-if="o.l10n_latam_document_type_id_code not in ['19','20','21']">
-                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label" />
-                    :
+                    <t t-esc="o.partner_id.vat" id="inv_tax_id_label" />
                 </t>
             </t>
-            -->
             <!-- Destino del Comprobante -->
             <t t-if="o.invoice_origin" position="after">
                 <t t-if="o.l10n_latam_document_type_id_code in ['19','20','21']">
