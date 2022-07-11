@@ -70,6 +70,7 @@
         'account_invoice_prices_update',
         'account_move_line_menu',
         'account_usability',
+        'account_move_name_sequence',
 
 
         # Cybrosys
