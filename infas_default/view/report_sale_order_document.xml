@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sale Order -->
+        <template id="report_saleorder_document" inherit_id="l10n_ar_sale.report_saleorder_document">
+            <!-- Remove Amount on report -->
+            <t groups="account.group_show_line_subtotals_tax_included" position="replace"/>
+        </template>
+    </data>
+</odoo>
