@@ -92,12 +92,12 @@
                     <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">ORIGINAL</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
-                <div style="width:100%; top:367mm;height:290mm;position:absolute;">
+                <div style="width:100%; top:366mm;height:290mm;position:absolute;">
                     <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
-                <div style="width:100%; top:725mm;height:290mm;position:absolute;">
-                    <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
+                <div style="width:100%; top:723mm;height:290mm;position:absolute;">
+                    <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">TRIPLICADO</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
             </div>
