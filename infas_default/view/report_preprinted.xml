@@ -85,7 +85,7 @@
             </div>
         </template>
 
-        <!-- Print 2 Pages -->
+        <!-- Print 3 Pages -->
         <template id="report_preprinted_pages">
             <div class="page" style="zoom:1.25;font-size:0.8em;">
                 <div style="width:100%; top:10mm;height:290mm; position:absolute;">
@@ -93,6 +93,10 @@
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
                 <div style="width:100%; top:365mm;height:290mm;position:absolute;">
+                    <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
+                    <t t-call="infas_default.report_preprinted_internal_header" />
+                </div>
+                <div style="width:100%; top:730mm;height:290mm;position:absolute;">
                     <span style="position:absolute;left:150mm;top:50mm;width:130mm;font-size:1.2em;font-weight:bold;">DUPLICADO</span>
                     <t t-call="infas_default.report_preprinted_internal_header" />
                 </div>
