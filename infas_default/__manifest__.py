@@ -36,6 +36,8 @@
         # 'crm_teams_ux',
         # 'crm_stage_teams',
         'base_ux',
+        'stock_ux',
+        'stock_available_unreserved',
 
         # Contabilidad
         'account',
