@@ -72,6 +72,10 @@
         'account_invoice_prices_update',
         'account_move_line_menu',
         'account_usability',
+        'sale_order_line_price_history',
+        'sale_require_purchase_order_number',
+        'sale_order_line_number',
+        'purchase_deposit',
 
 
         # Cybrosys
