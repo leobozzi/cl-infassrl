@@ -111,6 +111,9 @@
         'barcodes_gs1_nomenclature',
         'delivery_barcode',
         'product_brand',
+        'sale_stock_info_popup_color',
+        'stock_no_negative',
+        'stock_available',
 
         # Utils
         # 'web_search_with_and',
