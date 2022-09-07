@@ -115,7 +115,6 @@
         'delivery_barcode',
         'product_brand',
         'sale_stock_info_popup_color',
-        'stock_no_negative',
         'stock_available',
 
         # Utils
