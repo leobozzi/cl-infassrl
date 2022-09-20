@@ -241,6 +241,7 @@
         'https://github.com/leobozzi/odoo-addons-utils bit-odoo-addons-utils',
         # 'https://github.com/leobozzi/odoo-custom bit-odoo-custom',
         'https://github.com/leobozzi/enterprise.git',
+        'https://github.com/vangrow/account-modules.git',
 
         # Odoomates
         # ==========================================================================================
