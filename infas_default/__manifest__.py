@@ -120,7 +120,7 @@
         # Utils
         # 'web_search_with_and',
         'web_advanced_search',
-        'auto_backup',
+        #'auto_backup',
         'mass_editing',
         'filter_multi_user',
         'web_refresher',
