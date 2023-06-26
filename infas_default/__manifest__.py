@@ -136,6 +136,7 @@
         'view/report_invoice_presupuesto.xml',
         'view/report_export_invoice.xml',
         'view/report_sale_order_document.xml',
+        'view/report_sale_order_without_prices.xml'
     ],
     'test': [
     ],
