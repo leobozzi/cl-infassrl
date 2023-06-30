@@ -58,8 +58,11 @@
         </template>
 
         <!-- Add report -->
-        <report id="infas_report_saleorder_without_prices" model="sale.order"
-            name="infas_default.report_saleorder_without_prices" report_type="qweb-pdf"
-            string="Presupuesto sin precios" />
+        <report id="infas_report_saleorder_without_prices" 
+            model="sale.order"
+            name="infas_default.report_saleorder_without_prices" 
+            report_type="qweb-pdf"
+            string="Presupuesto sin precios" 
+            print_report_name = "('Presupuesto - ' + object.name)"/>
     </data>
 </odoo>
