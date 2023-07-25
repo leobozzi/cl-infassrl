@@ -57,43 +57,52 @@ services:
     environment:
       - SERVER_MODE=
     labels: 
-      # router rou-odoo --> Acceso a odoo en puerto 80
-      - traefik.http.routers.rou-odoo.rule=Host(`${SITE_DOMAIN}`)
-      - traefik.http.routers.rou-odoo.entrypoints=web
-      - traefik.http.routers.rou-odoo.service=srv-odoo-secure
+      - traefik.enable=true
+      #----------------------------------------------- routers for: odoo --------------------------------------------------
+      # http
+      - traefik.http.routers.odoo-http.rule=Host(`${SITE_DOMAIN}`)
+      - traefik.http.routers.odoo-http.entrypoints=http
+      #- traefik.http.routers.odoo-http.middlewares=redirect@file
+      - traefik.http.routers.odoo-http.service=odoo
+      # https
+      - traefik.http.routers.odoo-https.rule=Host(`${SITE_DOMAIN}`)
+      - traefik.http.routers.odoo-https.entrypoints=https
+      - traefik.http.routers.odoo-https.service=odoo
+      - traefik.http.routers.odoo-https.tls.certresolver=le
+      - traefik.http.routers.odoo-https.middlewares=gzip,sslheader,limit
+      #----------------------------- routes for: odoo/web/database || odoo/website/info  -----------------------------
+      # http 
+      - traefik.http.routers.odoo-db-http.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/web/database`) || PathPrefix(`/website/info`))
+      - traefik.http.routers.odoo-db-http.entrypoints=http
+      - traefik.http.routers.odoo-db-http.service=odoo
+      #- traefik.http.routers.odoo-db-http.middlewares=redirect@file
+      - traefik.http.services.odoo-db-http.loadbalancer.server.port=${ODOO_PORT}
+      # https 
+      - traefik.http.routers.odoo-db-https.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/web/database`) || PathPrefix(`/website/info`))
+      - traefik.http.routers.odoo-db-https.entrypoints=https
+      - traefik.http.routers.odoo-db-https.service=odoo
+      - traefik.http.routers.odoo-db-https.tls.certresolver=le
+      - traefik.http.routers.odoo-db-https.middlewares=gzip,sslheader,limit
+      - traefik.http.services.odoo-db-https.loadbalancer.server.port=${ODOO_PORT}
+      #---------------------------------------- routes for: odoo/longpolling ------------------------------------------------
+      # http 
+      - traefik.http.routers.odoo-im-http.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/longpolling`))
+      - traefik.http.routers.odoo-im-http.entrypoints=http
+      #- traefik.http.routers.odoo-im-http.middlewares=redirect@file
+      - traefik.http.routers.odoo-im-http.service=odoo-im
+      # https 
+      - traefik.http.routers.odoo-im-https.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/longpolling`))
+      - traefik.http.routers.odoo-im-https.entrypoints=https
+      - traefik.http.routers.odoo-im-https.service=odoo-im
+      - traefik.http.routers.odoo-im-https.tls.certresolver=le
+      - traefik.http.routers.odoo-im-https.middlewares=gzip,sslheader,limit
 
-      # router rou-chat --> Acceso a /longpolling en puerto 80
-      - traefik.http.routers.rou-chat.rule=Host(`${SITE_DOMAIN}`) && PathPrefix(`/longpolling`)
-      - traefik.http.routers.rou-chat.entrypoints=web
-      - traefik.http.routers.rou-chat.service=srv-chat-secure
+      #====================================================== services ===========================================================
+      - traefik.http.services.odoo.loadbalancer.server.port=${ODOO_PORT}
+      - traefik.http.services.odoo-im.loadbalancer.server.port=${CHAT_PORT}
 
-      # Middleware para comprimir paginas.
-      - traefik.http.middlewares.compress.compress=true
-
-      # Middleware para redireccionar redireccion http -> https
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true
-
-      # Asigno los middlewares de redireccion a los routers
-      - traefik.http.routers.rou-odoo.middlewares=redirect-to-https@docker
-      - traefik.http.routers.rou-chat.middlewares=redirect-to-https@docker
-
-      # router rou-odoo-secure --> Acceso a odoo en puerto 443
-      - traefik.http.routers.rou-odoo-secure.rule=Host(`${SITE_DOMAIN}`)
-      - traefik.http.routers.rou-odoo-secure.tls=true
-      - traefik.http.routers.rou-odoo-secure.tls.certresolver=le
-      - traefik.http.routers.rou-odoo-secure.entrypoints=websecure
-
-      # Redirecciona rou-odoo-secure al puert 8069 donde escucha odoo
-      - traefik.http.routers.rou-odoo-secure.service=srv-odoo-secure
-      - traefik.http.services.srv-odoo-secure.loadbalancer.server.port=${ODOO_PORT}
-
-      # Router rou-chat-secure --> Acceso a odoo en puerto 443
-      - traefik.http.routers.rou-chat-secure.rule=(Host(`${SITE_DOMAIN}`)) && PathPrefix(`/longpolling`)
-      - traefik.http.routers.rou-chat-secure.tls=true
-      - traefik.http.routers.rou-chat-secure.tls.certresolver=le
-      - traefik.http.routers.rou-chat-secure.entrypoints=websecure
-
-      # redirecciona rout-chat-secure al puerto 8072 donde odoo escucha el longpolling
-      - traefik.http.routers.rou-chat-secure.service=srv-chat-secure
-      - traefik.http.services.srv-chat-secure.loadbalancer.server.port=${CHAT_PORT}
+      #===================================================== middlewares =========================================================
+      - traefik.http.middlewares.gzip.compress=true
+      - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
+      - traefik.http.middlewares.limit.buffering.memRequestBodyBytes=20971520
+      - traefik.http.middlewares.limit.buffering.maxRequestBodyBytes=20971520
