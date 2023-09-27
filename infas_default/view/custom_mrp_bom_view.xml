@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Main MRP BOM FORM view-->
+	<record id="custom_mrp_bom_form_view" model="ir.ui.view">
+        <field name="name">custom_mrp_bom_form_view</field>
+		<field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='bom_line_ids']//tree//field[@name='product_qty']" position="before">
+                <field name="tecnical_data"/>
+            </xpath>
+		</field>
+	</record>
+</odoo>

@@ -76,6 +76,7 @@
         'sale_require_purchase_order_number',
         'sale_order_line_number',
         'purchase_deposit',
+        'purchase_last_price_info',
 
 
         # Cybrosys
@@ -132,6 +133,8 @@
     ],
     'data': [
         'view/custom_sale_order_view.xml',
+        'view/custom_mrp_bom_view.xml',
+        'view/custom_mrp_production_view.xml',
         'view/report_preprinted.xml',
         'view/report_invoice_presupuesto.xml',
         'view/report_export_invoice.xml',
