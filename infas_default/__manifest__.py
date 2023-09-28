@@ -246,6 +246,7 @@
         # 'https://github.com/leobozzi/odoo-custom bit-odoo-custom',
         'https://github.com/leobozzi/enterprise.git',
         'https://github.com/vangrow/account-modules.git',
+        'https://github.com/vangrow/mrp-modules.git',
 
         # Odoomates
         # ==========================================================================================
