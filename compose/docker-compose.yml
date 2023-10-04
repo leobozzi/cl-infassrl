@@ -10,24 +10,50 @@ services:
     image: traefik:2.6.2
     container_name: traefik
     restart: unless-stopped
-    command:
-      - --entrypoints.web.address=:80
-      - --entryPoints.websecure.address=:443
-
-      #- --log.level=DEBUG # Don't do that in production
-      - --providers.docker
-      # - --api.insecure # Don't do that in production
-      # - --api.debug # Don't do that in production
-
-      - --certificatesresolvers.le.acme.email=lbozzi@gmail.com
-      - --certificatesresolvers.le.acme.storage=/opt/traefik/acme.json
-      - --certificatesresolvers.le.acme.httpChallenge=true
-      - --certificatesresolvers.le.acme.httpChallenge.entryPoint=web
-      #- --certificatesresolvers.le.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory # descoment for staging
     ports:
       - "80:80"
       - "443:443"
-      # - "8080:8080"
+      - "30432:30432"
+      #- "8080:8080" # Don't do that in production
+    command:
+      #- --log=true # Don't do that in production
+      #- --log.level=DEBUG # Don't do that in production
+      #- --api.insecure=true # Don't do that in production
+      #- --api.debug=true # Don't do that in production
+      #- --api.dashboard=true # Don't do that in production
+  
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.docker.network=odoo_web
+
+      - --entrypoints.http.address=:80
+      - --entrypoints.https.address=:443
+      - --entrypoints.postgres.address=:30432
+
+      - --certificatesresolvers.le.acme.email=${LETS_ENCRYPT_CONTACT_EMAIL}
+      - --certificatesresolvers.le.acme.storage=/opt/traefik/acme.json
+      - --certificatesresolvers.le.acme.httpchallenge=true
+      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=http
+      #- --certificatesresolvers.le.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory # descoment for staging
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.traefik-http.rule=Host(`${TRAEFIK_SITE_DOMAIN}`)
+      - traefik.http.routers.traefik-http.entrypoints=http
+      - traefik.http.routers.traefik-http.service=traefik
+      #- traefik.http.routers.traefik-http.middlewares=redirect@file
+      - traefik.http.routers.traefik-https.rule=Host(`${TRAEFIK_SITE_DOMAIN}`)
+      - traefik.http.routers.traefik-https.entrypoints=https
+      - traefik.http.routers.traefik-https.tls=true
+      - traefik.http.routers.traefik-https.tls.options=default
+      - traefik.http.routers.traefik-https.service=traefik
+      - traefik.http.routers.traefik-https.tls.certresolver=le
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+      - traefik.http.routers.traefik-https.middlewares=gzip
+      - traefik.http.middlewares.gzip.compress=true
+
+    networks:
+      - odoo_web
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /odoo_ar/traefik/:/opt/traefik/
@@ -37,10 +63,28 @@ services:
     container_name: pg-infas
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=odoo
-      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - ${PROJECT_PATH}/postgresql:/var/lib/postgresql/data
+
+    labels: 
+      - traefik.enable=true
+      #----------------------------------------------- routers for: postgres --------------------------------------------------
+      # tcp
+      - traefik.tcp.routers.postgres.rule=HostSNI(`*`)
+      - traefik.tcp.routers.postgres.entrypoints=postgres
+      #- traefik.http.routers.odoo-http.middlewares=redirect@file
+      - traefik.tcp.routers.postgres.tls=false
+      - traefik.tcp.routers.postgres.service=postgres
+      - traefik.tcp.routers.postgres.middlewares=db-ipwhitelist
+      #====================================================== services ===========================================================
+      - traefik.tcp.services.postgres.loadbalancer.server.port=${DB_PORT}
+      #===================================================== middlewares =========================================================
+      - traefik.tcp.middlewares.db-ipwhitelist.ipwhitelist.sourcerange=${IP_WHITE_LIST}
+
+    networks:
+      - odoo_web
 
   odoo:
     image: ${ODOO_IMAGE}
@@ -55,46 +99,61 @@ services:
     links:
       - postgres:db
     environment:
+      - DB_ENV_POSTGRES_USER=${DB_USER}
+      - DB_ENV_POSTGRES_PASSWORD=${DB_PASSWORD}
       - SERVER_MODE=
       - ODOO_HTTP_SOCKET_TIMEOUT=30
     labels: 
-      # router rou-odoo --> Acceso a odoo en puerto 80
-      - traefik.http.routers.rou-odoo.rule=Host(`${SITE_DOMAIN}`)
-      - traefik.http.routers.rou-odoo.entrypoints=web
-      - traefik.http.routers.rou-odoo.service=srv-odoo-secure
+      - traefik.enable=true
+      #----------------------------------------------- routers for: odoo --------------------------------------------------
+      # http
+      - traefik.http.routers.odoo-http.rule=Host(`${SITE_DOMAIN}`)
+      - traefik.http.routers.odoo-http.entrypoints=http
+      #- traefik.http.routers.odoo-http.middlewares=redirect@file
+      - traefik.http.routers.odoo-http.service=odoo
+      # https
+      - traefik.http.routers.odoo-https.rule=Host(`${SITE_DOMAIN}`)
+      - traefik.http.routers.odoo-https.entrypoints=https
+      - traefik.http.routers.odoo-https.service=odoo
+      - traefik.http.routers.odoo-https.tls.certresolver=le
+      - traefik.http.routers.odoo-https.middlewares=gzip,sslheader,limit
+      #----------------------------- routes for: odoo/web/database || odoo/website/info  -----------------------------
+      # http 
+      - traefik.http.routers.odoo-db-http.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/web/database`) || PathPrefix(`/website/info`))
+      - traefik.http.routers.odoo-db-http.entrypoints=http
+      - traefik.http.routers.odoo-db-http.service=odoo
+      #- traefik.http.routers.odoo-db-http.middlewares=redirect@file
+      - traefik.http.services.odoo-db-http.loadbalancer.server.port=${ODOO_PORT}
+      # https 
+      - traefik.http.routers.odoo-db-https.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/web/database`) || PathPrefix(`/website/info`))
+      - traefik.http.routers.odoo-db-https.entrypoints=https
+      - traefik.http.routers.odoo-db-https.service=odoo
+      - traefik.http.routers.odoo-db-https.tls.certresolver=le
+      - traefik.http.routers.odoo-db-https.middlewares=gzip,sslheader,limit
+      - traefik.http.services.odoo-db-https.loadbalancer.server.port=${ODOO_PORT}
+      #---------------------------------------- routes for: odoo/longpolling ------------------------------------------------
+      # http 
+      - traefik.http.routers.odoo-im-http.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/longpolling`))
+      - traefik.http.routers.odoo-im-http.entrypoints=http
+      #- traefik.http.routers.odoo-im-http.middlewares=redirect@file
+      - traefik.http.routers.odoo-im-http.service=odoo-im
+      # https 
+      - traefik.http.routers.odoo-im-https.rule=Host(`${SITE_DOMAIN}`) && (PathPrefix(`/longpolling`))
+      - traefik.http.routers.odoo-im-https.entrypoints=https
+      - traefik.http.routers.odoo-im-https.service=odoo-im
+      - traefik.http.routers.odoo-im-https.tls.certresolver=le
+      - traefik.http.routers.odoo-im-https.middlewares=gzip,sslheader,limit
 
-      # router rou-chat --> Acceso a /longpolling en puerto 80
-      - traefik.http.routers.rou-chat.rule=Host(`${SITE_DOMAIN}`) && PathPrefix(`/longpolling`)
-      - traefik.http.routers.rou-chat.entrypoints=web
-      - traefik.http.routers.rou-chat.service=srv-chat-secure
+      #====================================================== services ===========================================================
+      - traefik.http.services.odoo.loadbalancer.server.port=${ODOO_PORT}
+      - traefik.http.services.odoo-im.loadbalancer.server.port=${CHAT_PORT}
+      
 
-      # Middleware para comprimir paginas.
-      - traefik.http.middlewares.compress.compress=true
+      #===================================================== middlewares =========================================================
+      - traefik.http.middlewares.gzip.compress=true
+      - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https
+      - traefik.http.middlewares.limit.buffering.memRequestBodyBytes=20971520
+      - traefik.http.middlewares.limit.buffering.maxRequestBodyBytes=20971520
 
-      # Middleware para redireccionar redireccion http -> https
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true
-
-      # Asigno los middlewares de redireccion a los routers
-      - traefik.http.routers.rou-odoo.middlewares=redirect-to-https@docker
-      - traefik.http.routers.rou-chat.middlewares=redirect-to-https@docker
-
-      # router rou-odoo-secure --> Acceso a odoo en puerto 443
-      - traefik.http.routers.rou-odoo-secure.rule=Host(`${SITE_DOMAIN}`)
-      - traefik.http.routers.rou-odoo-secure.tls=true
-      - traefik.http.routers.rou-odoo-secure.tls.certresolver=le
-      - traefik.http.routers.rou-odoo-secure.entrypoints=websecure
-
-      # Redirecciona rou-odoo-secure al puert 8069 donde escucha odoo
-      - traefik.http.routers.rou-odoo-secure.service=srv-odoo-secure
-      - traefik.http.services.srv-odoo-secure.loadbalancer.server.port=${ODOO_PORT}
-
-      # Router rou-chat-secure --> Acceso a odoo en puerto 443
-      - traefik.http.routers.rou-chat-secure.rule=(Host(`${SITE_DOMAIN}`)) && PathPrefix(`/longpolling`)
-      - traefik.http.routers.rou-chat-secure.tls=true
-      - traefik.http.routers.rou-chat-secure.tls.certresolver=le
-      - traefik.http.routers.rou-chat-secure.entrypoints=websecure
-
-      # redirecciona rout-chat-secure al puerto 8072 donde odoo escucha el longpolling
-      - traefik.http.routers.rou-chat-secure.service=srv-chat-secure
-      - traefik.http.services.srv-chat-secure.loadbalancer.server.port=${CHAT_PORT}
+    networks:
+      - odoo_web
