@@ -5,6 +5,10 @@
 
 version: '3.5'
 
+networks:
+  odoo_web:
+    external: true
+
 services:
   traefik:
     image: traefik:2.6.2
