@@ -13,3 +13,4 @@ class StockMove(models.Model):
     tecnical_data = fields.Char(
         related="bom_line_id.tecnical_data"
     )
+    

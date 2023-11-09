@@ -17,7 +17,7 @@ class PurchaseOrder(models.Model):
             if 'state' in vals:
                 if vals['state'] in ['done', 'purchase']:
                     for order_line in rec.order_line:
-                        if order_line.product_id.categ_id.property_cost_method == 'standard':
-                            product_company_price = order_line.price_unit / rec.currency_id.rate
+                        if order_line.product_id.categ_id.property_cost_method == 'standard' and order_line.price_unit != 0.0:
+                            product_company_price = order_line.price_unit / rec.currency_id.rate 
                             order_line.product_id.standard_price = product_company_price * order_line.product_id.currency_id.rate
         return res
