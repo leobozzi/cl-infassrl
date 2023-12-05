@@ -143,7 +143,7 @@
     ],
     'assets': {
         'web.assets_backend':  [
-            '/canal2_default/static/src/js/user_menu.js',
+            '/infas_default/static/src/js/user_menu.js',
         ],
     },
     'test': [
