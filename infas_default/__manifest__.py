@@ -141,6 +141,11 @@
         'view/report_sale_order_document.xml',
         'view/report_sale_order_without_prices.xml'
     ],
+    'assets': {
+        'web.assets_backend':  [
+            '/canal2_default/static/src/js/user_menu.js',
+        ],
+    },
     'test': [
     ],
     'installable': True,
