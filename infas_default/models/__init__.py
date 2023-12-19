@@ -5,3 +5,4 @@ from . import purchase_order
 from . import mrp_bom_line
 from . import stock_move
 from . import mrp_workorder
+from . import stock_move_line

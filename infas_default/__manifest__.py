@@ -77,7 +77,8 @@
         'sale_order_line_number',
         'purchase_deposit',
         'purchase_last_price_info',
-
+        'product_warranty',
+        'stock_production_lot_warranty',
 
         # Cybrosys
         # 'base_accounting_kit',
@@ -135,11 +136,12 @@
         'view/custom_sale_order_view.xml',
         'view/custom_mrp_bom_view.xml',
         'view/custom_mrp_production_view.xml',
+        'view/custom_stock_move_line_view.xml',
         'view/report_preprinted.xml',
         'view/report_invoice_presupuesto.xml',
         'view/report_export_invoice.xml',
         'view/report_sale_order_document.xml',
-        'view/report_sale_order_without_prices.xml'
+        'view/report_sale_order_without_prices.xml',
     ],
     'assets': {
         'web.assets_backend':  [
