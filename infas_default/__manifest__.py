@@ -313,6 +313,7 @@
         # 'https://github.com/OCA/queue oca-queue',
         # 'https://github.com/OCA/report-print-send oca-report-print-send',
         'https://github.com/OCA/reporting-engine oca-reporting-engine',
+        'https://github.com/OCA/rma oca.rma',
         # 'https://github.com/OCA/sale-reporting oca-sale-reporting',
         'https://github.com/OCA/sale-workflow oca-sale-workflow',
         # 'https://github.com/OCA/server-auth oca-server-auth',
