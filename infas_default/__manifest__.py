@@ -143,6 +143,7 @@
         'view/report_sale_order_document.xml',
         'view/report_sale_order_without_prices.xml',
         'view/report_repairorder.xml',
+        'security/sale_price_allow_group.xml',
     ],
     'assets': {
         'web.assets_backend':  [
