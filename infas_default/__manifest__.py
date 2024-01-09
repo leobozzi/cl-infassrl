@@ -137,6 +137,7 @@
         'view/custom_mrp_bom_view.xml',
         'view/custom_mrp_production_view.xml',
         'view/custom_stock_move_line_view.xml',
+        'view/custom_res_partner_view.xml',
         'view/report_preprinted.xml',
         'view/report_invoice_presupuesto.xml',
         'view/report_export_invoice.xml',

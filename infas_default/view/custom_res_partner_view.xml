@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--Main Res Partner FORM view-->
+	<record id="custom_res_partner_form_view" model="ir.ui.view">
+        <field name="name">custom_res_partner_form_view</field>
+		<field name="model">res.partner</field>
+        <field name="inherit_id" ref="sales_team.res_partner_view_team"/>
+		<field name="arch" type="xml">
+			<xpath expr="////field[@name='team_id']" position="attributes">
+                <attribute name="groups">infas_default.group_allow_price_change</attribute>
+            </xpath>
+		</field>
+	</record>
+</odoo>
