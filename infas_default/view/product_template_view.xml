@@ -1,0 +1,20 @@
+<odoo>
+    <!--Main Product Template Document FORM view-->
+    <record id="bit_product_template_document_form_view" model="ir.ui.view">
+        <field name="name">bit_product_template_document_form_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="document_count"  invisible="1"/>
+                <button type="object" name="action_open_documents" class="oe_stat_button" icon="fa-file-text">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value" widget="statinfo">
+                            <field name="document_count" widget="statinfo" string="Documents"/>
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

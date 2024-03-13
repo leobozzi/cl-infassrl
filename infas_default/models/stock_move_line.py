@@ -13,4 +13,3 @@ class StockMoveLine(models.Model):
     warranty_exp_data = fields.Date(
         related="lot_id.warranty_exp_date"
     )
-    

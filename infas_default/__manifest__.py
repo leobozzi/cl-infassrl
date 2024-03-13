@@ -144,6 +144,8 @@
         'view/report_sale_order_document.xml',
         'view/report_sale_order_without_prices.xml',
         'view/report_repairorder.xml',
+        'view/product_template_view.xml',
+        'view/documents_view.xml',
         'security/sale_price_allow_group.xml',
     ],
     'assets': {
